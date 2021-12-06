@@ -1,0 +1,34 @@
+version: '3.3'
+volumes:
+  data:
+services:
+  trem:
+    image: trem
+    ports:
+      - 5001:5001   
+  artista:
+    image: artista
+    ports:
+      - 5002:5002   
+  translado:
+    image: translado
+    links:
+      - trem
+    ports:
+      - 5003:5003   
+  apresentacao:
+    image: apresentacao
+    links:
+      - trem
+      - translado
+    ports:
+      - 5004:5004   
+  gateway:
+    image: gateway
+    links:
+      - trem
+      - artista
+      - translado
+      - apresentacao
+    ports:
+      - 5000:80

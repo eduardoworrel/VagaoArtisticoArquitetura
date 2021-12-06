@@ -1,0 +1,96 @@
+{
+    "ReRoutes": [{
+            "DownstreamPathTemplate": "/doc/",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [{
+                "Host": "trem",
+                "Port": 5001
+            }],
+            "UpstreamPathTemplate": "/doc/trem",
+            "UpstreamHttpMethod": ["GET"]
+        },
+        {
+            "DownstreamPathTemplate": "/d/menu.html",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [{
+                "Host": "doc-metro.eduardoworrel.com",
+                "Port": 80
+            }],
+            "UpstreamPathTemplate": "/doc/menu",
+            "UpstreamHttpMethod": ["POST", "PUT", "GET"]
+        },
+        {
+            "DownstreamPathTemplate": "/trem{everything}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [{
+                "Host": "trem",
+                "Port": 5001
+            }],
+            "UpstreamPathTemplate": "/trem{everything}",
+            "UpstreamHttpMethod": ["POST", "PUT", "GET"]
+        },
+        {
+            "DownstreamPathTemplate": "/artista/{everything}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [{
+                "Host": "artista",
+                "Port": 5002
+            }],
+            "UpstreamPathTemplate": "/artista/{everything}",
+            "UpstreamHttpMethod": ["POST", "PUT", "GET"]
+        },
+        {
+            "DownstreamPathTemplate": "/artista",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [{
+                "Host": "artista",
+                "Port": 5002
+            }],
+            "UpstreamPathTemplate": "/artista",
+            "UpstreamHttpMethod": ["POST", "PUT", "GET"]
+        },
+        {
+            "DownstreamPathTemplate": "/translado/{everything}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [{
+                "Host": "translado",
+                "Port": 5003
+            }],
+            "UpstreamPathTemplate": "/translado/{everything}",
+            "UpstreamHttpMethod": ["POST", "PUT", "GET"]
+        },
+        {
+            "DownstreamPathTemplate": "/translado",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [{
+                "Host": "translado",
+                "Port": 5003
+            }],
+            "UpstreamPathTemplate": "/translado",
+            "UpstreamHttpMethod": ["POST", "PUT", "GET"]
+        },
+        {
+            "DownstreamPathTemplate": "/apresentacao/{everything}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [{
+                "Host": "apresentacao",
+                "Port": 5004
+            }],
+            "UpstreamPathTemplate": "/apresentacao/{everything}",
+            "UpstreamHttpMethod": ["POST", "PUT", "GET"]
+        },
+        {
+            "DownstreamPathTemplate": "/apresentacao",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [{
+                "Host": "apresentacao",
+                "Port": 5004
+            }],
+            "UpstreamPathTemplate": "/apresentacao",
+            "UpstreamHttpMethod": ["POST", "PUT", "GET"]
+        }
+    ],
+    "GlobalConfiguration": {
+        "BaseUrl": "http://localhost"
+    }
+}

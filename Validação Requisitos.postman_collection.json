@@ -1,0 +1,1057 @@
+{
+	"info": {
+		"_postman_id": "fb0895df-b6fb-44ec-95fc-9d759ebf2db2",
+		"name": "Validação Requisitos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Administração",
+			"item": [
+				{
+					"name": "Trem 1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0062f537-c62e-429e-a010-749d922e2433",
+								"exec": [
+									"pm.test(\"Trem adicionado com sucesso.\", function () {\r",
+									"    pm.response.to.have.body(\"1\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://metro.eduardoworrel.com:5001/create/trem?codigo=IGTI-TREM-SYSTEM-001",
+							"protocol": "http",
+							"host": [
+								"metro",
+								"eduardoworrel",
+								"com"
+							],
+							"port": "5001",
+							"path": [
+								"create",
+								"trem"
+							],
+							"query": [
+								{
+									"key": "codigo",
+									"value": "IGTI-TREM-SYSTEM-001"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Trem 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a8d081f6-0194-426f-9a3f-9ff063e67675",
+								"exec": [
+									"pm.test(\"Trem adicionado com sucesso.\", function () {\r",
+									"    pm.response.to.have.body(\"1\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://metro.eduardoworrel.com:5001/create/trem?codigo=IGTI-TREM-SYSTEM-002",
+							"protocol": "http",
+							"host": [
+								"metro",
+								"eduardoworrel",
+								"com"
+							],
+							"port": "5001",
+							"path": [
+								"create",
+								"trem"
+							],
+							"query": [
+								{
+									"key": "codigo",
+									"value": "IGTI-TREM-SYSTEM-002"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Trem Repetido",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "97a192f3-2f0f-4ac8-bc92-ee97462eb727",
+								"exec": [
+									"pm.test(\"Cadastro bloqueado por nome repetido.\", function () {\r",
+									"    pm.response.to.have.body(\"-1\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://metro.eduardoworrel.com:5001/create/trem?codigo=IGTI-TREM-SYSTEM-001",
+							"protocol": "http",
+							"host": [
+								"metro",
+								"eduardoworrel",
+								"com"
+							],
+							"port": "5001",
+							"path": [
+								"create",
+								"trem"
+							],
+							"query": [
+								{
+									"key": "codigo",
+									"value": "IGTI-TREM-SYSTEM-001"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Translado 1 - Trem 1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fb50b5ae-1993-4bc4-902e-90c8dcc19152",
+								"exec": [
+									"pm.test(\"Translado adicionado com sucesso.\", function () {\r",
+									"    pm.response.to.have.body(\"1\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://metro.eduardoworrel.com:5003/create/translado?idTrem=1&estacaoPartida=JARDIM OCEANICO&dataHoraPartida=2020-08-17T08:00:00&estacaoChegada=URUGUAI&dataHoraChegada=2020-08-17T14:00:00",
+							"protocol": "http",
+							"host": [
+								"metro",
+								"eduardoworrel",
+								"com"
+							],
+							"port": "5003",
+							"path": [
+								"create",
+								"translado"
+							],
+							"query": [
+								{
+									"key": "idTrem",
+									"value": "1"
+								},
+								{
+									"key": "estacaoPartida",
+									"value": "JARDIM OCEANICO"
+								},
+								{
+									"key": "dataHoraPartida",
+									"value": "2020-08-17T08:00:00"
+								},
+								{
+									"key": "estacaoChegada",
+									"value": "URUGUAI"
+								},
+								{
+									"key": "dataHoraChegada",
+									"value": "2020-08-17T14:00:00"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Translado 2 - Trem 1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9660411c-cf29-4f2a-a6ee-0a10097bcbb5",
+								"exec": [
+									"pm.test(\"Translado adicionado com sucesso.\", function () {\r",
+									"    pm.response.to.have.body(\"1\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://metro.eduardoworrel.com:5003/create/translado?idTrem=1&estacaoPartida=URUGUAI&dataHoraPartida=2020-08-17T15:00:00&estacaoChegada=JARDIM OCEANICO&dataHoraChegada=2020-08-17T21:00:00",
+							"protocol": "http",
+							"host": [
+								"metro",
+								"eduardoworrel",
+								"com"
+							],
+							"port": "5003",
+							"path": [
+								"create",
+								"translado"
+							],
+							"query": [
+								{
+									"key": "idTrem",
+									"value": "1"
+								},
+								{
+									"key": "estacaoPartida",
+									"value": "URUGUAI"
+								},
+								{
+									"key": "dataHoraPartida",
+									"value": "2020-08-17T15:00:00"
+								},
+								{
+									"key": "estacaoChegada",
+									"value": "JARDIM OCEANICO"
+								},
+								{
+									"key": "dataHoraChegada",
+									"value": "2020-08-17T21:00:00"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Translado 3 - Trem 1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "37bd0ff0-c6f4-40b8-9906-7f79ac64dd34",
+								"exec": [
+									"pm.test(\"Translado adicionado com sucesso.\", function () {\r",
+									"    pm.response.to.have.body(\"1\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://metro.eduardoworrel.com:5003/create/translado?idTrem=1&estacaoPartida=JARDIM OCEANICO&dataHoraPartida=2020-08-18T08:00:00&estacaoChegada=URUGUAI&dataHoraChegada=2020-08-18T14:00:00",
+							"protocol": "http",
+							"host": [
+								"metro",
+								"eduardoworrel",
+								"com"
+							],
+							"port": "5003",
+							"path": [
+								"create",
+								"translado"
+							],
+							"query": [
+								{
+									"key": "idTrem",
+									"value": "1"
+								},
+								{
+									"key": "estacaoPartida",
+									"value": "JARDIM OCEANICO"
+								},
+								{
+									"key": "dataHoraPartida",
+									"value": "2020-08-18T08:00:00"
+								},
+								{
+									"key": "estacaoChegada",
+									"value": "URUGUAI"
+								},
+								{
+									"key": "dataHoraChegada",
+									"value": "2020-08-18T14:00:00"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Translado 1 - Trem 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d00525c9-f65d-4b8e-803a-c2ba7bd8d54c",
+								"exec": [
+									"pm.test(\"Translado adicionado com sucesso.\", function () {\r",
+									"    pm.response.to.have.body(\"1\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://metro.eduardoworrel.com:5003/create/translado?idTrem=2&estacaoPartida=BOTAFOGO&dataHoraPartida=2020-08-17T08:00:00&estacaoChegada=PAVUNA&dataHoraChegada=2020-08-17T14:00:00",
+							"protocol": "http",
+							"host": [
+								"metro",
+								"eduardoworrel",
+								"com"
+							],
+							"port": "5003",
+							"path": [
+								"create",
+								"translado"
+							],
+							"query": [
+								{
+									"key": "idTrem",
+									"value": "2"
+								},
+								{
+									"key": "estacaoPartida",
+									"value": "BOTAFOGO"
+								},
+								{
+									"key": "dataHoraPartida",
+									"value": "2020-08-17T08:00:00"
+								},
+								{
+									"key": "estacaoChegada",
+									"value": "PAVUNA"
+								},
+								{
+									"key": "dataHoraChegada",
+									"value": "2020-08-17T14:00:00"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Translado 2 - Trem 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "da97449c-f8f6-4eb4-9b6c-407376bfc343",
+								"exec": [
+									"pm.test(\"Translado adicionado com sucesso.\", function () {\r",
+									"    pm.response.to.have.body(\"1\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://metro.eduardoworrel.com:5003/create/translado?idTrem=2&estacaoPartida=PAVUNA&dataHoraPartida=2020-08-17T15:00:00&estacaoChegada=BOTAFOGO&dataHoraChegada=2020-08-17T21:00:00",
+							"protocol": "http",
+							"host": [
+								"metro",
+								"eduardoworrel",
+								"com"
+							],
+							"port": "5003",
+							"path": [
+								"create",
+								"translado"
+							],
+							"query": [
+								{
+									"key": "idTrem",
+									"value": "2"
+								},
+								{
+									"key": "estacaoPartida",
+									"value": "PAVUNA"
+								},
+								{
+									"key": "dataHoraPartida",
+									"value": "2020-08-17T15:00:00"
+								},
+								{
+									"key": "estacaoChegada",
+									"value": "BOTAFOGO"
+								},
+								{
+									"key": "dataHoraChegada",
+									"value": "2020-08-17T21:00:00"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Translado 3 - Trem 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "93d1a5e4-bc08-4926-8a62-b247d37c815b",
+								"exec": [
+									"pm.test(\"Translado adicionado com sucesso.\", function () {\r",
+									"    pm.response.to.have.body(\"1\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://metro.eduardoworrel.com:5003/create/translado?idTrem=2&estacaoPartida=BOTAFOGO&dataHoraPartida=2020-08-18T08:00:00&estacaoChegada=PAVUNA&dataHoraChegada=2020-08-18T14:00:00",
+							"protocol": "http",
+							"host": [
+								"metro",
+								"eduardoworrel",
+								"com"
+							],
+							"port": "5003",
+							"path": [
+								"create",
+								"translado"
+							],
+							"query": [
+								{
+									"key": "idTrem",
+									"value": "2"
+								},
+								{
+									"key": "estacaoPartida",
+									"value": "BOTAFOGO"
+								},
+								{
+									"key": "dataHoraPartida",
+									"value": "2020-08-18T08:00:00"
+								},
+								{
+									"key": "estacaoChegada",
+									"value": "PAVUNA"
+								},
+								{
+									"key": "dataHoraChegada",
+									"value": "2020-08-18T14:00:00"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Artista",
+			"item": [
+				{
+					"name": "Artista 1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://metro.eduardoworrel.com:5002/create/artista?nome=Eduardo Worrel&cpf=02296273233&estilo=Violão e voz&celular=96992008648&senha=qwerty",
+							"protocol": "http",
+							"host": [
+								"metro",
+								"eduardoworrel",
+								"com"
+							],
+							"port": "5002",
+							"path": [
+								"create",
+								"artista"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "Eduardo Worrel"
+								},
+								{
+									"key": "cpf",
+									"value": "02296273233"
+								},
+								{
+									"key": "estilo",
+									"value": "Violão e voz"
+								},
+								{
+									"key": "celular",
+									"value": "96992008648"
+								},
+								{
+									"key": "senha",
+									"value": "qwerty"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Artista 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://metro.eduardoworrel.com:5002/create/artista?nome=Mano Brown&cpf=02296273232&estilo=Rima improvisada  &celular=96992008649&senha=qwerty",
+							"protocol": "http",
+							"host": [
+								"metro",
+								"eduardoworrel",
+								"com"
+							],
+							"port": "5002",
+							"path": [
+								"create",
+								"artista"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "Mano Brown"
+								},
+								{
+									"key": "cpf",
+									"value": "02296273232"
+								},
+								{
+									"key": "estilo",
+									"value": "Rima improvisada  "
+								},
+								{
+									"key": "celular",
+									"value": "96992008649"
+								},
+								{
+									"key": "senha",
+									"value": "qwerty"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Artista 3",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://metro.eduardoworrel.com:5002/create/artista?nome=Nilton Nascimento &cpf=02296273231&estilo=Dança de rua&celular=96992108649&senha=qwerty",
+							"protocol": "http",
+							"host": [
+								"metro",
+								"eduardoworrel",
+								"com"
+							],
+							"port": "5002",
+							"path": [
+								"create",
+								"artista"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "Nilton Nascimento "
+								},
+								{
+									"key": "cpf",
+									"value": "02296273231"
+								},
+								{
+									"key": "estilo",
+									"value": "Dança de rua"
+								},
+								{
+									"key": "celular",
+									"value": "96992108649"
+								},
+								{
+									"key": "senha",
+									"value": "qwerty"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Artista 4",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://metro.eduardoworrel.com:5002/create/artista?nome=Irmãos Marshall&cpf=02294273232&estilo=Apresentação teatral &celular=96992228649&senha=qwerty",
+							"protocol": "http",
+							"host": [
+								"metro",
+								"eduardoworrel",
+								"com"
+							],
+							"port": "5002",
+							"path": [
+								"create",
+								"artista"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "Irmãos Marshall"
+								},
+								{
+									"key": "cpf",
+									"value": "02294273232"
+								},
+								{
+									"key": "estilo",
+									"value": "Apresentação teatral "
+								},
+								{
+									"key": "celular",
+									"value": "96992228649"
+								},
+								{
+									"key": "senha",
+									"value": "qwerty"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apresentacao 1 - artista 1 - translado 1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://metro.eduardoworrel.com:5004/create/apresentacao?idTranslado=1&idArtista=1&horaComeca=2020-08-17T08:00:00&horaTermina=2020-08-17T10:00:00&status=0",
+							"protocol": "http",
+							"host": [
+								"metro",
+								"eduardoworrel",
+								"com"
+							],
+							"port": "5004",
+							"path": [
+								"create",
+								"apresentacao"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "idTranslado",
+									"value": "1"
+								},
+								{
+									"key": "idArtista",
+									"value": "1"
+								},
+								{
+									"key": "horaComeca",
+									"value": "2020-08-17T08:00:00"
+								},
+								{
+									"key": "horaTermina",
+									"value": "2020-08-17T10:00:00"
+								},
+								{
+									"key": "status",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apresentacao 2 - artista 1 - translado 3",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://metro.eduardoworrel.com:5004/create/apresentacao?id=0&idTranslado=3&idArtista=1&horaComeca=2020-08-18T08:00:00&horaTermina=2020-08-18T10:00:00&status=0",
+							"protocol": "http",
+							"host": [
+								"metro",
+								"eduardoworrel",
+								"com"
+							],
+							"port": "5004",
+							"path": [
+								"create",
+								"apresentacao"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "0"
+								},
+								{
+									"key": "idTranslado",
+									"value": "3"
+								},
+								{
+									"key": "idArtista",
+									"value": "1"
+								},
+								{
+									"key": "horaComeca",
+									"value": "2020-08-18T08:00:00"
+								},
+								{
+									"key": "horaTermina",
+									"value": "2020-08-18T10:00:00"
+								},
+								{
+									"key": "status",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apresentacao 3 - artista 2 - translado 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://metro.eduardoworrel.com:5004/create/apresentacao?id=0&idTranslado=2&idArtista=2&horaComeca=2020-08-17T15:00:00&horaTermina=2020-08-17T20:00:00&status=0",
+							"protocol": "http",
+							"host": [
+								"metro",
+								"eduardoworrel",
+								"com"
+							],
+							"port": "5004",
+							"path": [
+								"create",
+								"apresentacao"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "0"
+								},
+								{
+									"key": "idTranslado",
+									"value": "2"
+								},
+								{
+									"key": "idArtista",
+									"value": "2"
+								},
+								{
+									"key": "horaComeca",
+									"value": "2020-08-17T15:00:00"
+								},
+								{
+									"key": "horaTermina",
+									"value": "2020-08-17T20:00:00"
+								},
+								{
+									"key": "status",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apresentacao 4 - artista 2 - translado 1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://metro.eduardoworrel.com:5004/create/apresentacao?id=0&idTranslado=1&idArtista=2&horaComeca=2020-08-17T12:00:00&horaTermina=2020-08-17T14:00:00&status=0",
+							"protocol": "http",
+							"host": [
+								"metro",
+								"eduardoworrel",
+								"com"
+							],
+							"port": "5004",
+							"path": [
+								"create",
+								"apresentacao"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "0"
+								},
+								{
+									"key": "idTranslado",
+									"value": "1"
+								},
+								{
+									"key": "idArtista",
+									"value": "2"
+								},
+								{
+									"key": "horaComeca",
+									"value": "2020-08-17T12:00:00"
+								},
+								{
+									"key": "horaTermina",
+									"value": "2020-08-17T14:00:00"
+								},
+								{
+									"key": "status",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apresentacao 5 - artista 3 - translado 1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://metro.eduardoworrel.com:5004/create/apresentacao?id=0&idTranslado=1&idArtista=3&horaComeca=2020-08-17T10:00:00&horaTermina=2020-08-17T12:00:00&status=0",
+							"protocol": "http",
+							"host": [
+								"metro",
+								"eduardoworrel",
+								"com"
+							],
+							"port": "5004",
+							"path": [
+								"create",
+								"apresentacao"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "0"
+								},
+								{
+									"key": "idTranslado",
+									"value": "1"
+								},
+								{
+									"key": "idArtista",
+									"value": "3"
+								},
+								{
+									"key": "horaComeca",
+									"value": "2020-08-17T10:00:00"
+								},
+								{
+									"key": "horaTermina",
+									"value": "2020-08-17T12:00:00"
+								},
+								{
+									"key": "status",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apresentacao 6 - artista 3 - translado 4",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://metro.eduardoworrel.com:5004/create/apresentacao?id=0&idTranslado=4&idArtista=4&horaComeca=2020-08-17T08:00:00&horaTermina=2020-08-17T11:00:00&status=0",
+							"protocol": "http",
+							"host": [
+								"metro",
+								"eduardoworrel",
+								"com"
+							],
+							"port": "5004",
+							"path": [
+								"create",
+								"apresentacao"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "0"
+								},
+								{
+									"key": "idTranslado",
+									"value": "4"
+								},
+								{
+									"key": "idArtista",
+									"value": "4"
+								},
+								{
+									"key": "horaComeca",
+									"value": "2020-08-17T08:00:00"
+								},
+								{
+									"key": "horaTermina",
+									"value": "2020-08-17T11:00:00"
+								},
+								{
+									"key": "status",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apresentacao 7 - artista 4 - translado 5",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://metro.eduardoworrel.com:5004/create/apresentacao?id=0&idTranslado=5&idArtista=4&horaComeca=2020-08-17T16:00:00&horaTermina=2020-08-17T19:00:00&status=0",
+							"protocol": "http",
+							"host": [
+								"metro",
+								"eduardoworrel",
+								"com"
+							],
+							"port": "5004",
+							"path": [
+								"create",
+								"apresentacao"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "0"
+								},
+								{
+									"key": "idTranslado",
+									"value": "5"
+								},
+								{
+									"key": "idArtista",
+									"value": "4"
+								},
+								{
+									"key": "horaComeca",
+									"value": "2020-08-17T16:00:00"
+								},
+								{
+									"key": "horaTermina",
+									"value": "2020-08-17T19:00:00"
+								},
+								{
+									"key": "status",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apresentacao 8 - artista 4 - translado 6",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://metro.eduardoworrel.com:5004/create/apresentacao?id=0&idTranslado=6&idArtista=4&horaComeca=2020-08-18T09:00:00&horaTermina=2020-08-18T11:00:00&status=0",
+							"protocol": "http",
+							"host": [
+								"metro",
+								"eduardoworrel",
+								"com"
+							],
+							"port": "5004",
+							"path": [
+								"create",
+								"apresentacao"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "0"
+								},
+								{
+									"key": "idTranslado",
+									"value": "6"
+								},
+								{
+									"key": "idArtista",
+									"value": "4"
+								},
+								{
+									"key": "horaComeca",
+									"value": "2020-08-18T09:00:00"
+								},
+								{
+									"key": "horaTermina",
+									"value": "2020-08-18T11:00:00"
+								},
+								{
+									"key": "status",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

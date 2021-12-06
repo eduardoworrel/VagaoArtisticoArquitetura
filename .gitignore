@@ -1,0 +1,17 @@
+#docs
+**/ArquiteturaDocs/*
+*
+# test results
+**/TestResults/*
+
+# build results
+**/bin/*
+**/obj/*
+**/out/*
+**/dist/*
+**/published/*
+
+#sql
+*.sql
+_ArquiteturaDocs/
+Documentacao/*

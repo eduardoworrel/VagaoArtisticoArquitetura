@@ -1,0 +1,82 @@
+<!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" href="http://metro.eduardoworrel.com:5001/doc/swagger-ui.css">
+    <meta charset="UTF-8">
+    <style>
+        #menu {
+            height: 60px;
+        }
+        
+        @media (max-width: 600px) {
+            #menu {
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div style="width: 85%; margin: 0 auto;">
+
+        <head>
+            <Title>Documentação</Title>
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+            <meta charset="UTF-8">
+        </head>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="border-radius: 10px;;">
+            <a class="navbar-brand" href="http://metro.eduardoworrel.com/">Início</a>
+            <div class="collapse navbar-collapse show" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <a class="nav-link" href="http://metro.eduardoworrel.com:5001/doc/">
+                        Trem API
+                    </a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://metro.eduardoworrel.com:5002/doc/">
+                            Artista API
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://metro.eduardoworrel.com:5003/doc/">
+                            Translado API
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://metro.eduardoworrel.com:5004/doc/">
+                            Apresentação API
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <div style="border-left:2px solid  #89bf04;">
+            <div id="swagger-ui"></div>
+        </div>
+        <iframe name="iframe" src="https://metro.eduardoworrel.com/trem/index.php" height="800px" style="border:none;overflow:hidden;" width="100%"></iframe>
+        <script src="http://metro.eduardoworrel.com:5001/doc/swagger-ui-bundle.js"></script>
+        <script src="http://metro.eduardoworrel.com:5001/doc/swagger-ui-standalone-preset.js"></script>
+
+        <script>
+            window.onload = function() {
+                const ui = SwaggerUIBundle({
+                    url: "http://metro.eduardoworrel.com:5001/swagger/v1/swagger.json",
+                    dom_id: ' #swagger-ui ',
+                    presets: [
+                        SwaggerUIBundle.presets.apis,
+                        SwaggerUIStandalonePreset
+                    ]
+                })
+                window.ui = ui
+            }
+        </script>
+
+</body>
+
+</html>
