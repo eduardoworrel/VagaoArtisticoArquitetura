@@ -1,5 +1,5 @@
 # Vagão Artístico
 
-Protótipo de um ecossistema de micro serviços desenvolvido para o TCC da minha especializaçao em arquitetura de software pelo IGTI.
+Protótipo de um ecossistema de micro serviços desenvolvido durante o TCC da minha especializaçao em Arquitetura de Software pelo IGTI.
 
 ![alt text](https://eduardoworrel.com/imgs/helper/arquitetura.gif)
